@@ -1,7 +1,11 @@
+//Interfaces in Go
+//Lee Panti
+
 package main
 
 import "fmt"
 
+// an interface is a type in Go that lets you group different structs that have similar methods/ abilities.
 type instrument interface {
 	sound() string
 	playingTechnique() string

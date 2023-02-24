@@ -1,3 +1,6 @@
+// goroutines in Go
+// Lee Panti
+
 package main
 
 import (
@@ -6,6 +9,7 @@ import (
 )
 
 func main() {
+	// independent functions that have no relation to main.
 	go deliveryBoy()
 
 	time.Sleep(time.Second * 2)

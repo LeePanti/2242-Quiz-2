@@ -1,3 +1,6 @@
+// channels in Go
+// Lee Panti
+
 package main
 
 import (
@@ -5,6 +8,7 @@ import (
 )
 
 func main() {
+	// channels connect the independent go routines to main via a "pipe".
 	connection := make(chan string)
 
 	go independentChildConnected(connection)
@@ -13,7 +17,8 @@ func main() {
 
 	fmt.Println(message)
 
-	//go disconnected()
+	// go disconnected()
+	// fmt.Println("finished")
 }
 
 func independentChildConnected(connection chan string) {

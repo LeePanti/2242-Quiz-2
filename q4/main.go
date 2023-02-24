@@ -1,3 +1,6 @@
+// wait groups in Go
+// Lee Panti
+
 package main
 
 import (
@@ -7,6 +10,7 @@ import (
 )
 
 func main() {
+	// wait groups in Go can be thought of as goroutine counters.
 	var wg sync.WaitGroup
 
 	wg.Add(2)
@@ -15,6 +19,7 @@ func main() {
 	go deliveryBoy2(&wg)
 
 	wg.Wait()
+	fmt.Println("finishing")
 }
 
 func deliveryBoy1(wg *sync.WaitGroup) {
