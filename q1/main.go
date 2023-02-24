@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type instrument interface {
 	sound() string
 	playingTechnique() string
@@ -38,4 +40,30 @@ type cricket struct {
 
 func (c cricket) sound() string {
 	return "chirp"
+}
+
+func main() {
+	myGuitar := guitar{
+		material: "wood",
+		types:    "acoustic",
+	}
+	myDrum := drum{
+		material: "wood",
+		types:    "Bass",
+	}
+
+	smallCricket := cricket{
+		color: "green",
+		size:  3,
+	}
+
+	printInfo(myGuitar)
+	printInfo(myDrum)
+	//printInfo(smallCricket)
+
+	fmt.Println(smallCricket.sound())
+}
+
+func printInfo(i instrument) {
+	fmt.Println("This Instrument has a", i.sound(), "sound and is played by", i.playingTechnique(), "it.")
 }
